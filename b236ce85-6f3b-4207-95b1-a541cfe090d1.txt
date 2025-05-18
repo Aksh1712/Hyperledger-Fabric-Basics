@@ -1,0 +1,96 @@
+# Hyperledger Fabric-specific
+crypto-config/
+*.block
+*.tx
+*.pid
+*.log
+fabric-samples/config/*
+!fabric-samples/config/core.yaml
+!fabric-samples/config/configtx.yaml
+!fabric-samples/config/orderer.yaml
+organizations/
+*.tar.gz
+*.pem
+*.crt
+*.key
+
+# Go-specific
+vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+pkg/
+testdata/
+
+# Node.js-specific
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+*.pid.lock
+temp/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+._*
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.sublime*
+*.code-workspace
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Cache files
+.cache/
+*.cache
+
+# Test coverage
+coverage/
+*.lcov
+
+# Documentation artifacts
+docs/_build/
+docs/build/
+
+# Python-specific (if applicable)
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+*.egg-info/
+*.egg
+
+# Docker-specific
+*.docker
+docker-compose.yml.bak

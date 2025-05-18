@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "Installing Hyperledger Fabric..."
+
+# Check prerequisites
+command -v docker >/dev/null 2>&1 || { echo "Docker is required but not installed. Aborting."; exit 1; }
+command -v docker-compose >/dev/null 2>&1 || { echo "Docker Compose is required but not installed. Aborting."; exit 1; }
+command -v go >/dev/null 2>&1 || { echo "Go is required but not installed. Aborting."; exit 1; }
+command -v node >/dev/null 2>&1 || { echo "Node.js is required but not installed. Aborting."; exit 1; }
+
+# Set Fabric version
+FABRIC_VERSION="2.5.0"
+FABRIC_CA_VERSION="1.5.7"
+
+# Download Fabric samples, binaries, and Docker images
+curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/bootstrap.sh | bash -s -- $FABRIC_VERSION $FABRIC_CA_VERSION
+
+# Move fabric-samples to the repo root
+mv fabric-samples .
+
+# Clean up
+rm -rf fabric-samples-$FABRIC_VERSION
+
+echo "Hyperledger Fabric installation complete!"
+echo "Fabric samples are in the 'fabric-samples' directory."
